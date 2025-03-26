@@ -1,0 +1,341 @@
+/* -----------------------------------------------------------
+   1. GOOGLE FONT IMPORT (Optional)
+----------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+/* -----------------------------------------------------------
+   2. ROOT VARIABLES
+----------------------------------------------------------- */
+:root {
+  --dark-green: #3C6E47;
+  --light-green: #a1ca71;
+  --accent-green: #7CB342;
+  --white: #FFFFFF;
+  --text-color: #333333;
+}
+
+/* -----------------------------------------------------------
+   3. RESET & GLOBAL STYLES
+----------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--light-green);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* -----------------------------------------------------------
+   4. HEADER (FULL BACKGROUND IMAGE)
+----------------------------------------------------------- */
+.header {
+  position: relative;
+  background: url("https://rossgarlick.com/wp-content/uploads/2012/11/img_0847.jpg")
+    center/cover no-repeat;
+  color: #fff;
+  min-height: 800px; /* Enough height to show the hero text below the nav */
+  font-size: 1.1rem;
+}
+
+/* Optional overlay for darkening the background image */
+.header .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+/* Top bar: logo on left, nav on right */
+.header-top {
+  position: relative;
+  z-index: 2;  /* above overlay */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  background: rgba(0, 0, 0, 0.253); /* or var(--dark-green), or #fff for a white bar */
+}
+
+/* Logo */
+.logo-container .logo {
+  height: 170px; /* adjust as needed */
+}
+
+/* -----------------------------------------------------------
+   5. NAVIGATION & DROPDOWN
+----------------------------------------------------------- */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: .5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+  border-radius: 4px;
+  color: var(--white);
+}
+
+.nav a:hover {
+  color: var(--accent-green);
+  background-color: rgba(0,0,0,0.2);
+}
+
+/* Place the new vertical dropdown CSS here */
+.nav .dropdown {
+  display: none;                         
+  position: absolute;                    
+  left: 0;                               
+  top: 100%;                             
+  background-color: var(--dark-green);   
+  border: 1px solid var(--accent-green); 
+  border-radius: 4px;                    
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);   
+  padding: 0.5rem 0;                      
+  z-index: 100;                          
+  width: max-content;                    
+}
+
+.nav li {
+  position: relative;
+}
+
+.nav li:hover > .dropdown {
+  display: block;
+}
+
+.nav .dropdown li {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.nav .dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+
+.nav .dropdown a:hover {
+  background-color: var(--accent-green);
+}
+/* Optional: underline effect on hover with a pseudo-element */
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-green);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* -----------------------------------------------------------
+   6. HERO SECTION & ANIME.JS CLASSES
+----------------------------------------------------------- */
+/* If you have a separate hero area below the top bar: */
+.header-hero {
+  position: relative;
+  z-index: 2; /* above overlay */
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 4rem;  /* space between nav and text */
+  padding: 0 1rem;   /* small horizontal padding for smaller screens */
+}
+
+.header-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.header-hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #7CB342;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background: #6AA233;
+}
+
+/* ml6 classes for anime.js letter animation */
+.ml6 {
+  text-align: center;      /* Center the text */
+  color: #fff;             /* Ensure all text is white */
+  font-weight: 900;        /* Bold text */
+  line-height: 1.2;
+}
+
+/* Main heading (first line) */
+.ml6 .letters {
+  display: inline-block;
+  font-size: 2.5rem;       /* Larger font for the main heading */
+}
+
+/* Subheading (second line) */
+.ml6 .subheading {
+  display: block;          /* Put it on its own line */
+  font-size: 1.2rem;       /* Smaller font for the subheading */
+  margin-top: 0.5rem;      /* Space between main heading and subheading */
+  font-weight: 400;        /* Lighter weight for contrast */
+}
+
+/* If you're using the anime.js letter-based effect, ensure each letter is inline-block */
+.ml6 .letter {
+  display: inline-block;
+}
+
+/* -----------------------------------------------------------
+   7. TWO-CARDS LAYOUT SECTION
+----------------------------------------------------------- */
+.two-cards-section {
+  background-color: #407f42; /* Light green background */
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;  /* Centers the cards horizontally */
+}
+
+.card {
+  background-color: #fff;   /* White card background */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  padding: 1.5rem;
+  max-width: 500px;         /* Limit width so cards don’t stretch too wide */
+  flex: 1;                  /* Allows both cards to share space evenly */
+  font-size: 20px;
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  color: #3C6E47;           /* A dark green, or any color you prefer */
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .two-cards-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    max-width: 600px;       /* A bit wider on mobile if desired */
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* -----------------------------------------------------------
+   8. GALLERY SECTION
+----------------------------------------------------------- */
+.gallery {
+  text-align: center;        
+  background-color: #407f42; 
+  padding: 2rem;            
+  margin: 2rem 0;           
+  border-radius: 100000px;   /* Large rounding for a unique style */
+}
+
+.gallery h2 {
+  font-size: 3rem;          
+  color: #ffffff;           
+}
+
+/* Center & enlarge the image */
+.team-photo img {
+  display: block;           
+  margin: 0 auto;           
+  max-width: 700px;         
+  width: 100%;              
+  height: 100%;             
+  border: 5px solid #ffffff;
+  border-radius: 8px;       
+  margin-top: 1.5rem;
+}
+
+/* -----------------------------------------------------------
+   9. MAIN CONTENT
+----------------------------------------------------------- */
+.main-content {
+  padding: 2rem;
+}
+
+.intro, .highlight {
+  margin-bottom: 2rem;
+}
+
+.intro h2,
+.highlight h2 {
+  margin-bottom: 1rem;
+}
+
+/* -----------------------------------------------------------
+   10. FOOTER
+----------------------------------------------------------- */
+.footer {
+  background-color: var(--dark-green);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* -----------------------------------------------------------
+   11. RESPONSIVE ADJUSTMENTS
+----------------------------------------------------------- */
+@media (max-width: 768px) {
+  .nav ul {
+    flex-direction: column;
+  }
+  .dropdown {
+    position: static;
+    margin-top: 0;
+  }
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+}

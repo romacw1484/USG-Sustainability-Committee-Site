@@ -1,39 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Meta & Title -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>USG Sustainability Committee</title>
-  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- JavaScript: anime.js (loaded in head for now) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+  <!-- Main JS (defer to ensure DOM loads first) -->
+  <script defer src="scripts.js"></script>
+
+  <!-- Commented-out inline style (no longer needed) 
+  <style>
+    .picture-box {
+      width: 300px;
+      height: 200px;
+      border: 2px solid #000;
+      margin: 20px;
+      display: inline-block;
+    }
+  </style> 
+  -->
 </head>
+
 <body>
-  <!-- Sidebar Navigation -->
-  <div class="sidebar">
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li>
-          <a href="#subcommittees">Subcommittees</a>
+  <div class="container">
+    <!-- HEADER SECTION -->
+    <header class="header">
+      <!-- Optional overlay if you still want a dark layer over the background image -->
+      <div class="overlay"></div>
+      
+      <!-- Top bar: logo on left, nav on right -->
+      <div class="header-top">
+        <div class="logo-container">
+          <img src="pics/WhiteFordhamUSG_.png" alt="USG Logo" class="logo">
+        </div>
+        <nav class="nav">
           <ul>
-            <li><a href="subcommittees/committee1.html">Committee 1</a></li>
-            <li><a href="subcommittees/committee2.html">Committee 2</a></li>
-            <li><a href="subcommittees/committee3.html">Committee 3</a></li>
-            <li><a href="subcommittees/committee4.html">Committee 4</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown-parent">
+              <a href="#" class="subcommittees-link">Subcommittees</a>
+              <ul class="dropdown">
+                <li><a href="subcommittees/committee1.html">Committee 1</a></li>
+                <li><a href="subcommittees/committee2.html">Committee 2</a></li>
+                <li><a href="subcommittees/committee3.html">Committee 3</a></li>
+                <li><a href="subcommittees/committee4.html">Committee 4</a></li>
+              </ul>
+            </li>
+            <li><a href="internships.html">Internships/Community</a></li>
+            <li><a href="members.html">Committee Members</a></li>
+            <li><a href="student-posts.html">Student Posts</a></li>
           </ul>
-        </li>
-        <li><a href="internships.html">Internships/Community</a></li>
-        <li><a href="members.html">Committee Members</a></li>
-        <li><a href="student-posts.html">Student Posts</a></li>
-      </ul>
-    </nav>
+        </nav>
+      </div>
+      
+      <!-- Hero section for big text and button -->
+      <div class="hero-text ml6">
+        <span class="text-wrapper">
+          <!-- I want to incorporate this but I am not sure how yet 
+          <span class="letters">
+            Fordham USG Sustainability Committee
+            <br>
+            <span class="subheading">
+              Leading the way in sustainability and conservation on campus.
+            </span>
+          </span>
+          -->
+        </span>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT: Two-Cards Section -->
+    <section class="two-cards-section">
+      <div class="card">
+        <h2>Welcome!</h2>
+        <p>
+          Thank you for visiting our USG Sustainability Committee website. We encourage 
+          you to explore our initiatives, upcoming events, and ways to get involved. 
+          By working together, we can make a real impact on campus and beyond.
+        </p>
+      </div>
+      <div class="card">
+        <h2>About the Committee!</h2>
+        <p>
+          The United Student Government (USG) Sustainability Committee seeks to make 
+          our university a sustainable institution. We believe that as a Jesuit 
+          university, Fordham has a responsibility to care for the continuing health 
+          of the planet and its people. Our objective is to pursue concrete, effective 
+          initiatives that advance the goal of a healthy, viable future. We push every 
+          student, faculty, and staff member to reduce their present environmental 
+          impact while also seeking to imbue them with a long-term sustainable mindset.
+        </p>
+        <p>
+          Meetings are held at 6 pm EST on Wednesdays in room ILC 2-124 in CSC.
+        </p>
+        <p>
+          If you have any questions, contact us on Instagram at usgsustainability, 
+          fordham.flea, or email usgsustainability@fordham.edu.
+        </p>
+      </div>
+    </section>
+
+    <!-- GALLERY / TEAM PHOTO -->
+    <section class="gallery">
+      <h2>Meet the Team</h2>
+      <div class="team-photo">
+        <img src="pics/USGTeam.png" alt="Team Photo" />
+      </div>
+    </section>
+
+    <!-- INITIATIVES -->
+    <section class="initiatives" style="background-color: #e0f7e0; padding: 20px;">
+      <h2>Our Initiatives</h2>
+      <p>
+        We are committed to promoting sustainability through various initiatives such as 
+        campus clean-ups, recycling programs, and educational workshops. Join us in making 
+        a difference!
+      </p>
+    </section>
+
+    <!-- CONTACT US -->
+    <section class="contact-us" style="background-color: #c8e6c9; padding: 20px;">
+      <h2>Contact Us</h2>
+      <p>
+        Have questions or want to get involved? Reach out to us at 
+        <a href="mailto:sustainability@fordham.edu">sustainability@fordham.edu</a> or 
+        follow us on social media for the latest updates.
+      </p>
+    </section>
   </div>
 
-  <!-- Main Content Area -->
-  <div class="main-content">
-    <h1>Welcome to the USG Sustainability Committee</h1>
-    <p>This website serves as a resource for students interested in sustainability, conservation, and climate initiatives on campus. Explore our subcommittees, find internship and community involvement opportunities, learn about our committee members, and join the conversation!</p>
-  </div>
-
-  <script src="js/scripts.js"></script>
+  <!-- FOOTER SECTION -->
+  <footer class="footer">
+    <p>&copy; 2025 Fordham USG Sustainability Committee. All rights reserved.</p>
+  </footer>
 </body>
 </html>

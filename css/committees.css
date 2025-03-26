@@ -1,0 +1,203 @@
+/* -----------------------------------------------------------
+   1. GOOGLE FONT IMPORT (Optional)
+----------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+/* -----------------------------------------------------------
+   2. ROOT VARIABLES
+----------------------------------------------------------- */
+:root {
+  --dark-green: #3C6E47;
+  --light-green: #a1ca71;
+  --accent-green: #7CB342;
+  --white: #FFFFFF;
+  --text-color: #333333;
+}
+
+/* -----------------------------------------------------------
+   3. RESET & GLOBAL STYLES
+----------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--light-green);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* -----------------------------------------------------------
+   4. SUBCOMMITTEE HEADER (Logo + Nav, No Big Background)
+----------------------------------------------------------- */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: .5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+  border-radius: 4px;
+  color: var(--white);
+}
+
+.nav a:hover {
+  color: var(--accent-green);
+  background-color: rgba(0,0,0,0.2);
+}
+
+/* Place the new vertical dropdown CSS here */
+.nav .dropdown {
+  display: none;                         
+  position: absolute;                    
+  left: 0;                               
+  top: 100%;                             
+  background-color: var(--dark-green);   
+  border: 1px solid var(--accent-green); 
+  border-radius: 4px;                    
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);   
+  padding: 0.5rem 0;                      
+  z-index: 100;                          
+  width: max-content;                    
+}
+
+.nav li {
+  position: relative;
+}
+
+.nav li:hover > .dropdown {
+  display: block;
+}
+
+.nav .dropdown li {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.nav .dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+
+.nav .dropdown a:hover {
+  background-color: var(--accent-green);
+}
+/* Optional: underline effect on hover with a pseudo-element */
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-green);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* -----------------------------------------------------------
+   6. SUBCOMMITTEE MAIN CONTENT
+----------------------------------------------------------- */
+.committee-content {
+  padding: 2rem;
+}
+
+.committee-content h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--dark-green);
+}
+
+.committee-intro {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.committee-image img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.committee-description {
+  flex: 1;
+}
+
+.committee-description h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--dark-green);
+}
+
+.committee-description p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* -----------------------------------------------------------
+   7. FOOTER
+----------------------------------------------------------- */
+.footer {
+  background-color: var(--dark-green);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* -----------------------------------------------------------
+   8. RESPONSIVE ADJUSTMENTS
+----------------------------------------------------------- */
+@media (max-width: 768px) {
+  .nav ul {
+    flex-direction: column;
+  }
+  
+  .dropdown {
+    position: static;
+    margin-top: 0;
+  }
+  
+  .committee-intro {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .committee-image img {
+    max-width: 100%;
+  }
+}
