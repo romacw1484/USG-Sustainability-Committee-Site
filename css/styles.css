@@ -41,6 +41,11 @@ body {
   flex-direction: column;
 }
 
+.block {
+  border-bottom: 3px solid #fff; /* White horizontal line */        /* Spacing below each block */
+}
+
+
 /* -----------------------------------------------------------
    4. HEADER (FULL BACKGROUND IMAGE)
 ----------------------------------------------------------- */
@@ -83,7 +88,7 @@ body {
 .nav ul {
   list-style: none;
   display: flex;
-  gap: .5rem;
+  gap: -1rem;
   margin: 0;
   padding: 0;
 }
@@ -246,7 +251,8 @@ body {
   padding: 1.5rem;
   max-width: 500px;         /* Limit width so cards don’t stretch too wide */
   flex: 1;                  /* Allows both cards to share space evenly */
-  font-size: 20px;
+  font-size: 22px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .card h2 {
@@ -273,8 +279,10 @@ body {
   text-align: center;        
   background-color: #407f42; 
   padding: 2rem;            
-  margin: 2rem 0;           
+  margin: 2rem 10rem;           
   border-radius: 100000px;   /* Large rounding for a unique style */
+  max-width: 90%;           /* Or a fixed px value like 1200px if you prefer */
+  border: 3px solid #fff;
 }
 
 .gallery h2 {
@@ -288,8 +296,8 @@ body {
   margin: 0 auto;           
   max-width: 700px;         
   width: 100%;              
-  height: 100%;             
-  border: 5px solid #ffffff;
+  height: auto;             
+  border: 3px solid #ffffff;
   border-radius: 8px;       
   margin-top: 1.5rem;
 }
@@ -309,6 +317,54 @@ body {
 .highlight h2 {
   margin-bottom: 1rem;
 }
+/* The outer wrapper background */
+.initiatives-wrapper {
+  background-color: #7aac71;  /* Some neutral color for the area around the box */
+  padding: 2rem 0;           /* Space above/below the card */
+}
+
+/* The card itself */
+.initiatives {
+  max-width: 800px;
+  margin: 0 auto;            /* Centers the card within the wrapper */
+  background-color: #6fa871; /* The color inside the card */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 2rem;
+  text-align: left;
+  border: 5px solid #800000;
+}
+
+.initiatives h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #800000; /* or your preferred heading color */
+  font-size: 2rem;
+}
+
+/* Initiatives list styling (same as before) */
+.initiatives-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #800000;
+}
+
+.initiatives-list li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.initiatives-list li::before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  color: #800000;
+  font-size: 1.2rem;
+}
 
 /* -----------------------------------------------------------
    10. FOOTER
@@ -316,10 +372,37 @@ body {
 .footer {
   background-color: var(--dark-green);
   color: var(--white);
-  text-align: center;
   padding: 1rem;
   width: 100%;
+  text-align: center; /* Centers content horizontally */
 }
+
+/* Make the footer text and icon share one line */
+.footer-text {
+  display: inline-flex;      /* Ensures text + icon stay on the same line */
+  align-items: center;       /* Vertically center them */
+  gap: 2rem;               /* Spacing between text and icon */
+  margin: 0;
+}
+
+.insta-link {
+  display: inline-block;
+}
+
+/* Rounded, small Instagram icon */
+.insta-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 1000%;        /* Makes it circular, or use 8px for rounded square */
+  object-fit: contain;         /* Ensures the image fills the circle nicely */
+  transition: opacity 0.3s;
+  vertical-align: middle;
+}
+
+.insta-icon:hover {
+  opacity: 0.8;
+}
+
 
 /* -----------------------------------------------------------
    11. RESPONSIVE ADJUSTMENTS

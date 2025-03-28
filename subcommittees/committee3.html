@@ -1,46 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Subcommittee 1</title>
-  <!-- Link to the main CSS file -->
-  <link rel="stylesheet" href="../css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Committee 3 | USG Sustainability</title>
+  <!-- Link to your main CSS (or a separate committees CSS if desired) -->
+  <link rel="stylesheet" href="../css/committees.css" />
+  <!-- Link to your scripts if needed -->
+  <script defer src="../js/scripts.js"></script>
 </head>
 <body>
-  <!-- Sidebar Navigation -->
-  <div class="sidebar">
-    <nav>
+
+  <!-- HEADER: Logo & Nav only, no big background image -->
+  <div class="header-top">
+    <div class="logo-container">
+      <img src="../pics/MaroonUSGLogo.png" alt="USG Logo" class="logo">
+    </div>
+    <nav class="nav">
       <ul>
+        <!-- Home is in the root folder, so go up one level -->
         <li><a href="../index.html">Home</a></li>
+    
+        <!-- Subcommittees dropdown -->
         <li>
-          <a href="#subcommittees">Subcommittees</a>
-          <ul>
-            <li><a href="committee1.html">Committee 1</a></li>
-            <li><a href="committee2.html">Committee 2</a></li>
-            <li><a href="committee3.html">Committee 3</a></li>
-            <li><a href="committee4.html">Committee 4</a></li>
+          <a href="#" class="subcommittees-link">Subcommittees</a>
+          <ul class="dropdown">
+            <li><a href="committee1.html">Fordham Changes</a></li>
+            <li><a href="committee2.html">Events and Communications</a></li>
+            <li><a href="committee3.html">Fordham Flea</a></li>
+            <li><a href="committee4.html">Eco Representatives</a></li>
           </ul>
         </li>
+    
+        <!-- Other pages also in root folder, so add ../ -->
         <li><a href="../internships.html">Internships/Community</a></li>
         <li><a href="../members.html">Committee Members</a></li>
-        <li><a href="../student-posts.html">Student Posts</a></li>
+        <li><a href="../resources.html">Resources</a></li>
       </ul>
     </nav>
   </div>
 
-  <!-- Main Content Area -->
-  <div class="main-content">
-    <h1>Subcommittee 3: [Subcommittee Name]</h1>
-    <!-- Framed section for information -->
-    <div class="frame">
-      <h2>About this Subcommittee</h2>
-      <p>
-        This section can include details about the subcommittee’s purpose, its recent activities, goals, and ways for students to get involved. Customize the content as needed.
-      </p>
-    </div>
-  </div>
+  <!-- MAIN CONTENT: Subcommittee Page -->
+  <main class="committee-content">
+    <h1>Fordham Flea</h1>
+    <section class="committee-intro">
+      <div class="committee-image">
+        <!-- Subcommittee-specific photo -->
+        <img src="../pics/committee1.jpg" alt="Committee 1 Photo">
+      </div>
+      <div class="committee-description">
+        <h2>What We Do</h2>
+        <p>
+          Fordham Flea is a student-run campus-wide thrift store. We are committed to promoting second-hand shopping and sustainable fashion practices. 
+          We take student donations and host flea market events around campus for students to shop. All proceeds go toward supporting sustainability initiatives on campus.
+        </p>
+        <p>
+          Have old clothes you want to donate? Look for the purple collection bins in the dorms on campus! 
+          Check out our Instagram <a href="https://www.instagram.com/fordham.flea/" target="_blank">@fordhamflea</a> to see which dorms currently have bins! 
+          Anyone can donate – even if you do not live in the dorm where the bin is located. Thank you for your support!
+        </p>
+        
+      </div>
+    </section>
+  </main>
 
-  <script src="../js/scripts.js"></script>
+  <!-- FOOTER SECTION -->
+  <body>
+    <div class="wrapper">
+      <!-- Your header/navigation here -->
+  
+      <main class="content">
+        <!-- Page content here -->
+      </main>
+  
+      <footer class="footer">
+        <p>&copy; 2025 Fordham USG Sustainability Committee. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+
 </body>
 </html>
